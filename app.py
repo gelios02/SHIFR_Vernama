@@ -83,20 +83,7 @@ def generate_secret_file():
         f.write(data)
     print(f"[OK] Секретный файл '{filename}' сгенерирован и сохранён в бинарном формате.")
 
-def view_binary_file():
-    filename = input("Введите путь к бинарному файлу: ").strip()
-    try:
-        with open(filename, 'rb') as f:
-            data = f.read()
-        try:
-            decoded = data.decode('utf-8')
-            print("Содержимое файла (UTF-8):")
-            print(decoded)
-        except UnicodeDecodeError:
-            print("Не удалось декодировать файл как UTF-8. HEX-представление:")
-            print(" ".join(f"{b:02x}" for b in data))
-    except Exception as e:
-        print("[Ошибка]", e)
+
 
 
 def main():
@@ -105,8 +92,7 @@ def main():
         print("1. Сгенерировать файл случайных символов")
         print("2. Шифр Вернама (XOR двух файлов)")
         print("3. RC4: Шифрование/расшифрование файла")
-        print("5. Просмотр содержимого бинарного файла")
-        print("6. Выход")
+        print("4. Выход")
 
         choice = input("Выберите опцию (1-6): ").strip()
         if choice == '1':
@@ -130,8 +116,6 @@ def main():
             output_file = input("Введите имя выходного файла: ").strip()
             rc4_file(key_str, input_file, output_file)
         elif choice == '4':
-            view_binary_file()
-        elif choice == '5':
             print("Выход...")
             sys.exit(0)
         else:
