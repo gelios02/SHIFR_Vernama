@@ -75,16 +75,6 @@ def rc4_file(key_str: str, input_file: str, output_file: str):
 
     print(f"[OK] Файл '{input_file}' обработан RC4 и записан в '{output_file}'.")
 
-def generate_secret_file():
-    text = input("Введите секретный текст: ").strip()
-    filename = input("Введите имя файла для секретного текста (например, secret.bin): ").strip()
-    data = text.encode('utf-8')
-    with open(filename, 'wb') as f:
-        f.write(data)
-    print(f"[OK] Секретный файл '{filename}' сгенерирован и сохранён в бинарном формате.")
-
-
-
 
 def main():
     while True:
