@@ -84,7 +84,7 @@ def main():
         print("3. RC4: Шифрование/расшифрование файла")
         print("4. Выход")
 
-        choice = input("Выберите опцию (1-6): ").strip()
+        choice = input("Выберите опцию (1-4): ").strip()
         if choice == '1':
             filename = input("Введите имя файла: ").strip()
             try:
